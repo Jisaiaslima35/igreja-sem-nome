@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "titulo": "Culto de Domingo",
+    "data": "2026-04-27",
+    "resumo": "Venha nos visitar às 18h para nosso culto semanal de celebração.",
+    "texto": "Nosso culto de domingo é um momento especial de louvor, adoração e comunhão. Contamos com sua presença para compartilhar da palavra e da graça de Deus.",
+    "imagem": "img/culto.jpg",
+    "categoria": "Culto"
+  },
+  {
+    "id": 2,
+    "titulo": "Estudo Bíblico Semanal",
+    "data": "2026-04-29",
+    "resumo": "Junte-se a nós para aprofundar seu conhecimento da Bíblia toda terça-feira.",
+    "texto": "Nosso estudo bíblico é uma oportunidade para explorar as escrituras de forma mais profunda, tirar dúvidas e crescer na fé. Traga sua Bíblia e venha aprender conosco.",
+    "imagem": "img/estudo.jpg",
+    "categoria": "Estudo"
+  },
+  {
+    "id": 3,
+    "titulo": "Noite de Louvor e Adoração",
+    "data": "2026-05-03",
+    "resumo": "Uma noite especial dedicada à adoração e gratidão a Deus.",
+    "texto": "Prepare seu coração para uma noite de louvor e adoração com músicas inspiradoras e um momento de oração. Sinta a presença de Deus em nosso meio.",
+    "imagem": "img/louvor.jpg",
+    "categoria": "Adoração"
+  },
+  {
+    "id": 4,
+    "titulo": "Conferência da Família",
+    "data": "2026-05-15",
+    "resumo": "Dias de edificação e fortalecimento para toda a família.",
+    "texto": "Nossa conferência da família abordará temas relevantes para fortalecer os laços familiares e promover a fé em Cristo. Teremos palestras, workshops e atividades para todas as idades.",
+    "imagem": "img/conferencia.jpg",
+    "categoria": "Conferência"
+  },
+  {
+    "id": 5,
+    "titulo": "Ação Social e Evangelismo",
+    "data": "2026-05-22",
+    "resumo": "Leve a palavra e o amor de Deus aos necessitados da nossa comunidade.",
+    "texto": "Participe da nossa ação social e evangelismo, levando esperança e ajuda aos que mais precisam. Juntos podemos fazer a diferença na vida de muitas pessoas.",
+    "imagem": "img/social.jpg",
+    "categoria": "Social"
+  }
+]
