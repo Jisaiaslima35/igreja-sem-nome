@@ -1,47 +1,52 @@
 [
   {
-    "id": 1,
-    "titulo": "Culto de Domingo",
-    "data": "2026-04-27",
-    "resumo": "Venha nos visitar às 18h para nosso culto semanal de celebração.",
-    "texto": "Nosso culto de domingo é um momento especial de louvor, adoração e comunhão. Contamos com sua presença para compartilhar da palavra e da graça de Deus.",
-    "imagem": "img/culto.jpg",
-    "categoria": "Culto"
+    "id": 8,
+    "titulo": "Inteligência Artificial: Transformando o Mundo Moderno",
+    "data": "2026-04-21",
+    "resumo": "A Inteligência Artificial está revolucionando todos os setores da sociedade. Entenda como essa tecnologia está moldando nosso presente e futuro.",
+    "texto": "A Inteligência Artificial (IA) tornou-se uma das forças mais transformadoras do mundo moderno. Desde assistentes virtuais em nossos smartphones até sistemas complexos de diagnóstico médico, a IA está presente em praticamente every aspecto de nossas vidas.\n\nNa área da saúde, algoritmos de aprendizado de máquina ajudam médicos a identificar doenças com maior precisão. No comércio, recomendações personalizadas melhoram a experiência do consumidor. Nas empresas, automações baseadas em IA otimizam processos e reduzem custos operacionais.\n\nO impacto da IA no mercado de trabalho é significativo. Enquanto algumas profissões são substituídas por máquinas, novas oportunidades surgem em áreas como ciência de dados, engenharia de prompt e ética em IA. A adaptação e o aprendizado contínuo tornaram-se essenciais para os profissionais.\n\nContudo, desafíos éticos accompany o avanço tecnológico. Questões sobre privacidade de dados, viés algorítmico e o uso responsável da IA demandam atenção cuidadosa. A transparência nos sistemas automatizados é fundamental para construir confiança.\n\nNa igreja e na comunidade religiosa, a IA também pode ser uma ferramenta poderosa para evangelização e comunicação. Sistemas de chatbot podem responder perguntas frequentes, e ferramentas de tradução facilitam o acesso a conteúdo em diferentes idiomas.\n\nO futuro da IA promete ainda mais inovações. Tecnologias como IA generativa já estão mudando a forma como criamos conteúdo, designs e soluções criativas. A chave está em abraçar o progresso enquanto mantemos nossos valores humanos fundamentais.",
+    "imagem": "https://res.cloudinary.com/dt994epgb/image/upload/v1776813778/igreja-sem-nome/ia-moderna.jpg",
+    "categoria": "Tecnologia",
+    "link": "https://wp.automacaojs.club/"
   },
   {
-    "id": 2,
-    "titulo": "Estudo Bíblico Semanal",
-    "data": "2026-04-29",
-    "resumo": "Junte-se a nós para aprofundar seu conhecimento da Bíblia toda terça-feira.",
-    "texto": "Nosso estudo bíblico é uma oportunidade para explorar as escrituras de forma mais profunda, tirar dúvidas e crescer na fé. Traga sua Bíblia e venha aprender conosco.",
-    "imagem": "img/estudo.jpg",
-    "categoria": "Estudo"
+    "id": 7,
+    "titulo": "Nossos Serviços: Automação, Sites e Apps Personalizados",
+    "data": "2026-04-21",
+    "resumo": "Transformamos suas ideias em soluções digitais. Criamos automações, landing pages, apps e sistemas sob medida para seu negócio.",
+    "texto": "Oferecemos serviços de automação para WhatsApp, criação de sites profissionais, apps personalizados e sistemas sob medida. Nosso objetivo é ajudar empresas e profissionais a otimizarem seus processos com tecnologia.",
+    "imagem": "https://res.cloudinary.com/dt994epgb/image/upload/v1776811835/igreja-sem-nome/servicos-automacao.jpg",
+    "categoria": "Serviços",
+    "link": "https://wp.automacaojs.club/"
   },
   {
-    "id": 3,
-    "titulo": "Noite de Louvor e Adoração",
-    "data": "2026-05-03",
-    "resumo": "Uma noite especial dedicada à adoração e gratidão a Deus.",
-    "texto": "Prepare seu coração para uma noite de louvor e adoração com músicas inspiradoras e um momento de oração. Sinta a presença de Deus em nosso meio.",
-    "imagem": "img/louvor.jpg",
-    "categoria": "Adoração"
+    "id": 6,
+    "titulo": "Bíblia Sagrada em PDF - Guia Completo para sua Vida Espiritual",
+    "data": "2026-04-21",
+    "resumo": "Baixe agora a Bíblia Sagrada em PDF e tenha a Palavra de Deus sempre com você. Guia completo com reflexões para fortalecer sua fé.",
+    "texto": "A Palavra de Deus é a base da nossa vida espiritual. Neste guia especial, reunimos reflexões poderosas para ajudar você a aprofundar seu conhecimento bíblico. Uma ferramenta essencial para todos os cristãos que desejam crescer na fé e ter a Palavra sempre acessível. Não perca esta oportunidade de fortalecer sua conexão com Deus através da leitura diária das Escrituras Sagradas.",
+    "imagem": "https://res.cloudinary.com/dt994epgb/image/upload/v1776806998/igreja-sem-nome/biblia-sagrada.jpg",
+    "categoria": "Recursos",
+    "link": "https://wp.automacaojs.club/"
   },
   {
-    "id": 4,
-    "titulo": "Conferência da Família",
-    "data": "2026-05-15",
-    "resumo": "Dias de edificação e fortalecimento para toda a família.",
-    "texto": "Nossa conferência da família abordará temas relevantes para fortalecer os laços familiares e promover a fé em Cristo. Teremos palestras, workshops e atividades para todas as idades.",
-    "imagem": "img/conferencia.jpg",
-    "categoria": "Conferência"
+    "id": 10,
+    "titulo": "Bíblia do Pregador em PDF — Agora por apenas R$ 9,90",
+    "data": "2026-04-22",
+    "resumo": "Tenha em mãos a Bíblia do Pregador completa em PDF, com referências cruzadas, notas de estudo e versículos destacados. Um recurso indispensável para pastores, líderes e todo cristão que deseja aprofundar sua vida com a Palavra de Deus. Acesso imediato após o pagamento.",
+    "texto": "Bíblia do Pregador completa em PDF com referências e notas de estudo.",
+    "imagem": "https://res.cloudinary.com/dt994epgb/image/upload/v1776564698/Reels/biblia_pregador.jpg",
+    "categoria": "Recursos",
+    "link": "https://wp.automacaojs.club/"
   },
   {
-    "id": 5,
-    "titulo": "Ação Social e Evangelismo",
-    "data": "2026-05-22",
-    "resumo": "Leve a palavra e o amor de Deus aos necessitados da nossa comunidade.",
-    "texto": "Participe da nossa ação social e evangelismo, levando esperança e ajuda aos que mais precisam. Juntos podemos fazer a diferença na vida de muitas pessoas.",
-    "imagem": "img/social.jpg",
-    "categoria": "Social"
+    "id": 11,
+    "titulo": "Culto de Domingo - Venha Participar!",
+    "data": "2026-04-26",
+    "resumo": "Nosso culto de domingo começa às 18h. Traga sua família e venha louvar a Deus com nós!.",
+    "texto": "Culto de domingo aberto a todos.",
+    "imagem": "https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=800&fit=crop",
+    "categoria": "Culto",
+    "link": "https://wp.automacaojs.club/"
   }
 ]

@@ -3,67 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Igreja Sem Nome - Eventos e Avisos</title>
+    <title>Eventos - Igreja Sem Nome</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0wLAsAy08k/2p3qM4y1P8r6r/bL5H/Z/fN4i6p0r6jW+M+y2M+0Q2/f5A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="posts-page">
-    <!--
-      Este é o arquivo HTML da página de eventos e avisos (posts.html).
-      Edite este arquivo para alterar o conteúdo e a estrutura da página de posts.
-    -->
-    <header class="main-header">
-        <div class="container">
+<body>
+    <header class="header">
+        <div class="container header-inner">
             <a href="index.html" class="logo">Igreja Sem Nome</a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="posts.html" class="active">Eventos</a></li>
-                    <li><a href="oracao.html">Oração</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="posts.html" class="nav-link active">Eventos</a></li>
+                    <li><a href="oracao.html" class="nav-link">Oração</a></li>
+                    <li><a href="sobre.html" class="nav-link">Sobre</a></li>
                 </ul>
             </nav>
-            <div class="hamburger-menu">
-                <i class="fas fa-bars"></i>
-            </div>
+            <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
-    <main>
-        <section class="posts-grid">
-            <div class="container">
-                <h2>Eventos e Avisos</h2>
-                <div class="post-grid">
-                    <!-- Todos os posts serão carregados aqui via JavaScript -->
-                </div>
-            </div>
-        </section>
-    </main>
+    <section class="eventos" style="padding-top: 80px;">
+        <h2>Nossos Eventos e Publicações</h2>
+        <div class="grid" id="postGrid"></div>
+    </section>
 
-    <footer class="main-footer">
-        <div class="container">
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
-            <p>&copy; 2026 Igreja Sem Nome. Todos os direitos reservados. | Endereço: Rua da Fé, 123 - Cidade da Graça</p>
+    <footer class="footer">
+        <div class="social">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
+        <p>&copy; 2026 Igreja Sem Nome</p>
     </footer>
 
     <script src="js/app.js"></script>
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-        (function(){
-            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-            s1.async=true;
-            s1.src='https://embed.tawk.to/62201c1d1ffac05b1d7caef3/1ft6mrlm9';
-            s1.charset='UTF-8';
-            s1.setAttribute('crossorigin','*');
-            s0.parentNode.insertBefore(s1,s0);
-        })();
+    <script>
+    (function() {
+        var hamburger = document.getElementById('hamburger');
+        var nav = document.getElementById('nav');
+        if (hamburger && nav) {
+            hamburger.addEventListener('click', function() {
+                nav.classList.toggle('open');
+                hamburger.classList.toggle('open');
+            });
+            document.addEventListener('click', function(e) {
+                if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+                    nav.classList.remove('open');
+                    hamburger.classList.remove('open');
+                }
+            });
+        }
+    })();
     </script>
-    <!--End of Tawk.to Script-->
+    <!-- RADIO PLAYER FIXO -->
+    <div style="position:fixed;bottom:24px;left:24px;z-index:9999;">
+        <script type="text/javascript" src="https://hosted.muses.org/mrp.js"></script>
+        <script type="text/javascript">
+        MRP.insert({
+            "url":"https://stream.zeno.fm/2lakgfphuy7tv",
+            "lang":"pt",
+            "codec":"mp3",
+            "volume":92,
+            "autoplay":true,
+            "forceHTML5":true,
+            "jsevents":true,
+            "buffering":0,
+            "title":"Radio Igreja",
+            "welcome":"Bem Vindos",
+            "wmode":"transparent",
+            "skin":"scradio",
+            "width":160,
+            "height":100
+        });
+        </script>
+    </div>
 </body>
 </html>

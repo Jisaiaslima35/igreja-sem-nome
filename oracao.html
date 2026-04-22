@@ -3,81 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Igreja Sem Nome - Mural de Oração</title>
+    <title>Oração - Igreja Sem Nome</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0wLAsAy08k/2p3qM4y1P8r6r/bL5H/Z/fN4i6p0r6jW+M+y2M+0Q2/f5A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="oracao-page">
-    <!--
-      Este é o arquivo HTML da página de oração (oracao.html).
-      Edite este arquivo para alterar o conteúdo e a estrutura do mural de oração.
-    -->
-    <header class="main-header">
-        <div class="container">
+<body>
+    <header class="header">
+        <div class="container header-inner">
             <a href="index.html" class="logo">Igreja Sem Nome</a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="posts.html">Eventos</a></li>
-                    <li><a href="oracao.html" class="active">Oração</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="posts.html" class="nav-link">Eventos</a></li>
+                    <li><a href="oracao.html" class="nav-link active">Oração</a></li>
+                    <li><a href="sobre.html" class="nav-link">Sobre</a></li>
                 </ul>
             </nav>
-            <div class="hamburger-menu">
-                <i class="fas fa-bars"></i>
-            </div>
+            <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
-    <main>
-        <section class="mural-oracao">
-            <div class="container">
-                <h2>Mural de Oração</h2>
-                <form id="oracao-form">
-                    <div>
-                        <label for="nome">Seu Nome:</label>
-                        <input type="text" id="nome" name="nome" required>
-                    </div>
-                    <div>
-                        <label for="pedido">Seu Pedido de Oração:</label>
-                        <textarea id="pedido" name="pedido" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Enviar Pedido</button>
-                </form>
+    <section class="mural-oracao" style="padding-top: 80px;">
+        <h2>Mural de Oração</h2>
+        <form id="oracao-form">
+            <input type="text" id="nome" placeholder="Seu nome" required>
+            <textarea id="pedido" placeholder="Seu pedido de oração" required></textarea>
+            <button type="submit" class="btn">Enviar Pedido</button>
+        </form>
+        <div class="oracao-cards" id="oracaoCards"></div>
+    </section>
 
-                <h3>Pedidos Recentes</h3>
-                <div class="oracao-cards">
-                    <!-- Pedidos de oração serão carregados aqui via JavaScript -->
-                </div>
-                <button id="clear-prayers-btn" class="clear-prayers-btn">Limpar Pedidos (Admin)</button>
+    
+    <!-- SALA AO VIVO -->
+    <section style="background:linear-gradient(135deg,#1a365d,#2c5282);padding:60px 20px;text-align:center;">
+        <h2 style="color:#f6ad55;margin-bottom:12px;font-size:1.8rem;">📡 Reunião e Estudo Bíblico Online</h2>
+        <p style="color:#fff;margin-bottom:10px;opacity:0.9;font-size:1.05rem;">Participe ao vivo com câmera e microfone — funciona no celular e no computador.</p>
+        <p style="color:#f6ad55;margin-bottom:32px;font-size:0.9rem;">⚠️ Clique no botão abaixo para entrar — abrirá em nova aba</p>
+        <a href="https://automacaojs.whereby.com/reuniao-2-geral844215f8-32fa-48cf-a5d0-91ac716888e7"
+           target="_blank"
+           style="display:inline-flex;align-items:center;gap:12px;background:#e53e3e;color:#fff;padding:18px 40px;border-radius:50px;font-weight:700;font-size:1.15rem;box-shadow:0 6px 25px rgba(229,62,62,0.5);text-decoration:none;transition:all 0.2s;">
+            <span style="width:12px;height:12px;background:#fff;border-radius:50%;animation:pulse 1.2s infinite;display:inline-block;"></span>
+            Entrar na Reunião Agora
+        </a>
+        <style>@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(1.4)}}</style>
+        <div style="margin-top:30px;background:rgba(255,255,255,0.1);border-radius:12px;padding:20px;max-width:500px;margin:30px auto 0;">
+            <p style="color:#fff;font-size:0.9rem;margin-bottom:12px;">📲 Compartilhe com os membros:</p>
+            <div style="display:flex;gap:10px;align-items:center;">
+                <input id="linkSala" value="https://automacaojs.whereby.com/reuniao-2-geral844215f8-32fa-48cf-a5d0-91ac716888e7"
+                    readonly style="flex:1;padding:10px;border-radius:8px;border:none;font-size:0.85rem;color:#333;">
+                <button onclick="navigator.clipboard.writeText(document.getElementById('linkSala').value);this.textContent='✅ Copiado!';setTimeout(()=>this.textContent='📋 Copiar',2000)"
+                    style="background:#f6ad55;color:#1a365d;border:none;padding:10px 16px;border-radius:8px;font-weight:700;cursor:pointer;white-space:nowrap;">
+                    📋 Copiar
+                </button>
             </div>
-        </section>
-    </main>
-
-    <footer class="main-footer">
-        <div class="container">
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
-            <p>&copy; 2026 Igreja Sem Nome. Todos os direitos reservados. | Endereço: Rua da Fé, 123 - Cidade da Graça</p>
         </div>
+        <div style="margin-top:40px;display:flex;justify-content:center;gap:40px;flex-wrap:wrap;">
+            <div style="color:#fff;opacity:0.8;text-align:center;">
+                <div style="font-size:2rem;margin-bottom:8px;">📱</div>
+                <div style="font-size:0.9rem;">Funciona no<br><strong>Celular</strong></div>
+            </div>
+            <div style="color:#fff;opacity:0.8;text-align:center;">
+                <div style="font-size:2rem;margin-bottom:8px;">💻</div>
+                <div style="font-size:0.9rem;">Funciona no<br><strong>Computador</strong></div>
+            </div>
+            <div style="color:#fff;opacity:0.8;text-align:center;">
+                <div style="font-size:2rem;margin-bottom:8px;">🎙️</div>
+                <div style="font-size:0.9rem;">Câmera e<br><strong>Microfone</strong></div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="social">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2026 Igreja Sem Nome</p>
     </footer>
 
     <script src="js/app.js"></script>
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-        (function(){
-            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-            s1.async=true;
-            s1.src='https://embed.tawk.to/62201c1d1ffac05b1d7caef3/1ft6mrlm9';
-            s1.charset='UTF-8';
-            s1.setAttribute('crossorigin','*');
-            s0.parentNode.insertBefore(s1,s0);
-        })();
+    <script>
+    (function() {
+        var hamburger = document.getElementById('hamburger');
+        var nav = document.getElementById('nav');
+        if (hamburger && nav) {
+            hamburger.addEventListener('click', function() {
+                nav.classList.toggle('open');
+                hamburger.classList.toggle('open');
+            });
+            document.addEventListener('click', function(e) {
+                if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+                    nav.classList.remove('open');
+                    hamburger.classList.remove('open');
+                }
+            });
+        }
+    })();
     </script>
-    <!--End of Tawk.to Script-->
+${TAWK}
+
+    <!-- Tawk.to Chat -->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/62201c1d1ffac05b1d7caef3/1ft6mrlm9';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!-- RADIO PLAYER FIXO -->
+    <div style="position:fixed;bottom:24px;left:24px;z-index:9999;">
+        <script type="text/javascript" src="https://hosted.muses.org/mrp.js"></script>
+        <script type="text/javascript">
+        MRP.insert({
+            "url":"https://stream.zeno.fm/2lakgfphuy7tv",
+            "lang":"pt",
+            "codec":"mp3",
+            "volume":92,
+            "autoplay":true,
+            "forceHTML5":true,
+            "jsevents":true,
+            "buffering":0,
+            "title":"Radio Igreja",
+            "welcome":"Bem Vindos",
+            "wmode":"transparent",
+            "skin":"scradio",
+            "width":160,
+            "height":100
+        });
+        </script>
+    </div>
 </body>
 </html>
