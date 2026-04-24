@@ -58,14 +58,5 @@
     "imagem": "https://res.cloudinary.com/dt994epgb/image/upload/v1776838711/igreja-sem-nome/web-radio-banner.jpg",
     "categoria": "Web Rádio",
     "link": "https://igreja-deploy.vercel.app"
-  },
-  {
-    "id": 14,
-    "titulo": "Teste Git Auto-Push",
-    "data": "2026-04-24",
-    "resumo": "Se aparecer no Vercel, a integração funcionou!",
-    "texto": "Se aparecer no Vercel, a integração funcionou!",
-    "imagem": "https://images.unsplash.com/photo-1504052433629-a6ef81a54d30?w=800",
-    "categoria": "Aviso"
   }
 ]
