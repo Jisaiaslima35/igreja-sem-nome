@@ -48,5 +48,34 @@
     "imagem": "https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=800&fit=crop",
     "categoria": "Culto",
     "link": "https://wp.automacaojs.club/"
+  },
+  {
+    "id": 13,
+    "titulo": "🎙️ Web Rádio Igreja Sem Nome - 24h de Música Gospel",
+    "data": "2026-04-22",
+    "resumo": "Ouça agora! Música gospel, oração e a Palavra de Deus 24 horas por dia. Sua rádio de fé!",
+    "texto": "A Web Rádio Igreja Sem Nome está no ar 24 horas! \n\n🎵 O que você encontra: \n• Música gospel animada\n• Orações e louvores\n• Mensagens edificantes\n• A Palavra de Deus\n\n📻 Clique emSAIBA MAIS e ouça agora mesmo!\n\nDeus é fiel!",
+    "imagem": "https://res.cloudinary.com/dt994epgb/image/upload/v1776838711/igreja-sem-nome/web-radio-banner.jpg",
+    "categoria": "Web Rádio",
+    "link": "https://igreja-deploy.vercel.app"
+  },
+  {
+    "id": 14,
+    "titulo": "🎙️ Nossa Web Rádio Também Tem Espaço Para Oração e Estudos!",
+    "data": "2026-04-24",
+    "resumo": "Que bom ter você aqui! Nossa web rádio não é só música — aqui também temos um espaço reservado para momentos de oração, estudos bíblicos e reflexão. Ouça, ore e cresça na fé.",
+    "texto": "🎙️ Nossa Web Rádio Também Tem Espaço Para Oração e Estudos!\n\nOlá, visitante! Você sabia que nossa web rádio vai muito além da música gospel?\n\n🌟 OFERECEMOS:\n• Momentos de oração ao vivo\n• Estudos bíblicos programados\n• Reflexões diarias\n• Louvores 24 horas\n\n👉 Acesse agora: https://igreja-deploy.vercel.app\n\nDeus te abençoe!",
+    "imagem": "https://res.cloudinary.com/dt994epgb/image/upload/v1776838711/igreja-sem-nome/web-radio-banner.jpg",
+    "categoria": "Adoração",
+    "link": "https://wp.automacaojs.club/"
+  },
+  {
+    "id": 15,
+    "titulo": "Teste Git Auto-Push",
+    "data": "2026-04-24",
+    "resumo": "Se aparecer no Vercel, a integração funcionou!",
+    "texto": "Se aparecer no Vercel, a integração funcionou!",
+    "imagem": "https://images.unsplash.com/photo-1504052433629-a6ef81a54d30?w=800",
+    "categoria": "Aviso"
   }
 ]
