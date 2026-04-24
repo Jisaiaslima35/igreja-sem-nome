@@ -58,24 +58,5 @@
     "imagem": "https://res.cloudinary.com/dt994epgb/image/upload/v1776838711/igreja-sem-nome/web-radio-banner.jpg",
     "categoria": "Web Rádio",
     "link": "https://igreja-deploy.vercel.app"
-  },
-  {
-    "id": 14,
-    "titulo": "🎙️ Nossa Web Rádio Também Tem Espaço Para Oração e Estudos!",
-    "data": "2026-04-24",
-    "resumo": "Que bom ter você aqui! Nossa web rádio não é só música — aqui também temos um espaço reservado para momentos de oração, estudos bíblicos e reflexão. Ouça, ore e cresça na fé.",
-    "texto": "🎙️ Nossa Web Rádio Também Tem Espaço Para Oração e Estudos!\n\nOlá, visitante! Você sabia que nossa web rádio vai muito além da música gospel?\n\n🌟 OFERECEMOS:\n• Momentos de oração ao vivo\n• Estudos bíblicos programados\n• Reflexões diarias\n• Louvores 24 horas\n\n👉 Acesse agora: https://igreja-deploy.vercel.app\n\nDeus te abençoe!",
-    "imagem": "https://res.cloudinary.com/dt994epgb/image/upload/v1776838711/igreja-sem-nome/web-radio-banner.jpg",
-    "categoria": "Adoração",
-    "link": "https://wp.automacaojs.club/"
-  },
-  {
-    "id": 15,
-    "titulo": "Teste Git Auto-Push",
-    "data": "2026-04-24",
-    "resumo": "Se aparecer no Vercel, a integração funcionou!",
-    "texto": "Se aparecer no Vercel, a integração funcionou!",
-    "imagem": "https://images.unsplash.com/photo-1504052433629-a6ef81a54d30?w=800",
-    "categoria": "Aviso"
   }
 ]
