@@ -68,5 +68,15 @@
     "imagem": "https://res.cloudinary.com/dt994epgb/image/upload/v1776838711/igreja-sem-nome/web-radio-banner.jpg",
     "categoria": "Culto",
     "link": "https://igreja-deploy.vercel.app/posts.html"
+  },
+  {
+    "id": 15,
+    "titulo": "Quer sua propria Web Radio? A gente monta pra voce!",
+    "data": "2026-04-25",
+    "resumo": "Oferecemos servico completo de web radio para igrejas e instituições. Seu conteúdo 24h no ar, alcance mundial.",
+    "texto": "QUER SUA PROPRIA WEB RADIO? A gente monta pra você!\n\nAqui na AutomacaoJS nós montamos a sua web radio completa! O seu conteúdo tocando 24 horas por dia, 7 dias na semana.\n\nO que você ganha:\n- Transmissao 24h automatica\n- Site personalizado com sua marca\n- Pagina de oracao ao vivo\n- Gerenciamento facil pelo WhatsApp\n\nIdeal para igrejas, podcasts, estacoes de musica gospel.\n\nAcesse e conheca: https://igreja-deploy.vercel.app\n\n/whatsapp: 5584996327329",
+    "imagem": "https://res.cloudinary.com/dt994epgb/image/upload/v1776838711/igreja-sem-nome/web-radio-banner.jpg",
+    "categoria": "Recursos",
+    "link": "https://wp.automacaojs.club/"
   }
 ]
