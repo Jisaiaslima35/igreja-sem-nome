@@ -7,7 +7,7 @@
     "texto": "A Inteligência Artificial (IA) tornou-se uma das forças mais transformadoras do mundo moderno. Desde assistentes virtuais em nossos smartphones até sistemas complexos de diagnóstico médico, a IA está presente em praticamente every aspecto de nossas vidas.\n\nNa área da saúde, algoritmos de aprendizado de máquina ajudam médicos a identificar doenças com maior precisão. No comércio, recomendações personalizadas melhoram a experiência do consumidor. Nas empresas, automações baseadas em IA otimizam processos e reduzem custos operacionais.\n\nO impacto da IA no mercado de trabalho é significativo. Enquanto algumas profissões são substituídas por máquinas, novas oportunidades surgem em áreas como ciência de dados, engenharia de prompt e ética em IA. A adaptação e o aprendizado contínuo tornaram-se essenciais para os profissionais.\n\nContudo, desafíos éticos accompany o avanço tecnológico. Questões sobre privacidade de dados, viés algorítmico e o uso responsável da IA demandam atenção cuidadosa. A transparência nos sistemas automatizados é fundamental para construir confiança.\n\nNa igreja e na comunidade religiosa, a IA também pode ser uma ferramenta poderosa para evangelização e comunicação. Sistemas de chatbot podem responder perguntas frequentes, e ferramentas de tradução facilitam o acesso a conteúdo em diferentes idiomas.\n\nO futuro da IA promete ainda mais inovações. Tecnologias como IA generativa já estão mudando a forma como criamos conteúdo, designs e soluções criativas. A chave está em abraçar o progresso enquanto mantemos nossos valores humanos fundamentais.",
     "imagem": "https://res.cloudinary.com/dt994epgb/image/upload/v1776813778/igreja-sem-nome/ia-moderna.jpg",
     "categoria": "Tecnologia",
-    "link": "https://wp.automacaojs.club/"
+    "link": "https://igreja-deploy.vercel.app/posts.html"
   },
   {
     "id": 7,
@@ -17,7 +17,7 @@
     "texto": "Oferecemos serviços de automação para WhatsApp, criação de sites profissionais, apps personalizados e sistemas sob medida. Nosso objetivo é ajudar empresas e profissionais a otimizarem seus processos com tecnologia.",
     "imagem": "https://res.cloudinary.com/dt994epgb/image/upload/v1776811835/igreja-sem-nome/servicos-automacao.jpg",
     "categoria": "Serviços",
-    "link": "https://wp.automacaojs.club/"
+    "link": "https://igreja-deploy.vercel.app/posts.html"
   },
   {
     "id": 6,
@@ -27,7 +27,7 @@
     "texto": "A Palavra de Deus é a base da nossa vida espiritual. Neste guia especial, reunimos reflexões poderosas para ajudar você a aprofundar seu conhecimento bíblico. Uma ferramenta essencial para todos os cristãos que desejam crescer na fé e ter a Palavra sempre acessível. Não perca esta oportunidade de fortalecer sua conexão com Deus através da leitura diária das Escrituras Sagradas.",
     "imagem": "https://res.cloudinary.com/dt994epgb/image/upload/v1776806998/igreja-sem-nome/biblia-sagrada.jpg",
     "categoria": "Recursos",
-    "link": "https://wp.automacaojs.club/"
+    "link": "https://igreja-deploy.vercel.app/posts.html"
   },
   {
     "id": 10,
@@ -37,7 +37,7 @@
     "texto": "Bíblia do Pregador completa em PDF com referências e notas de estudo.",
     "imagem": "https://res.cloudinary.com/dt994epgb/image/upload/v1776564698/Reels/biblia_pregador.jpg",
     "categoria": "Recursos",
-    "link": "https://wp.automacaojs.club/"
+    "link": "https://igreja-deploy.vercel.app/posts.html"
   },
   {
     "id": 11,
@@ -47,7 +47,7 @@
     "texto": "Culto de domingo aberto a todos.",
     "imagem": "https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=800&fit=crop",
     "categoria": "Culto",
-    "link": "https://wp.automacaojs.club/"
+    "link": "https://igreja-deploy.vercel.app/posts.html"
   },
   {
     "id": 13,
@@ -57,7 +57,7 @@
     "texto": "A Web Rádio Igreja Sem Nome está no ar 24 horas! \n\n🎵 O que você encontra: \n• Música gospel animada\n• Orações e louvores\n• Mensagens edificantes\n• A Palavra de Deus\n\n📻 Clique emSAIBA MAIS e ouça agora mesmo!\n\nDeus é fiel!",
     "imagem": "https://res.cloudinary.com/dt994epgb/image/upload/v1776838711/igreja-sem-nome/web-radio-banner.jpg",
     "categoria": "Web Rádio",
-    "link": "https://igreja-deploy.vercel.app"
+    "link": "https://igreja-deploy.vercel.app/posts.html"
   },
   {
     "id": 14,
@@ -67,6 +67,6 @@
     "texto": "Nosso espaço de oração online oferece sala de estudo com vídeo para até 200 participantes. Conecte-se de qualquer lugar!\n\nAcesse: https://igreja-deploy.vercel.app/oracao.html",
     "imagem": "https://res.cloudinary.com/dt994epgb/image/upload/v1776838711/igreja-sem-nome/web-radio-banner.jpg",
     "categoria": "Culto",
-    "link": "https://wp.automacaojs.club/"
+    "link": "https://igreja-deploy.vercel.app/posts.html"
   }
 ]
