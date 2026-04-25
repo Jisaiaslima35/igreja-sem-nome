@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         '<div class="post-card-content">' +
                         '<span class="meta">' + post.categoria + ' • ' + formatarData(post.data) + '</span>' +
                         '<h3>' + post.titulo + '</h3>' +
-                        '<p>' + post.resumo.substring(0, 100) + '...</p>' +
+                        '<p>' + post.resumo.substring(0, 250) + '...</p>' +
                         (post.link ? '<a href="' + post.link + '" target="_blank" class="btn-sm">Saiba Mais →</a>' : '') +
                         '</div></div>';
                 }).join('');
