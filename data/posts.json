@@ -58,5 +58,15 @@
     "imagem": "https://res.cloudinary.com/dt994epgb/image/upload/v1776838711/igreja-sem-nome/web-radio-banner.jpg",
     "categoria": "Web Rádio",
     "link": "https://igreja-deploy.vercel.app"
+  },
+  {
+    "id": 14,
+    "titulo": "Espaço de Oração Online - Sala de Estudo com Vídeo para até 200 Participantes",
+    "data": "2026-04-25",
+    "resumo": "Participe dos nossos momentos de oração e estudo bíblico online! Nossa sala virtual comporta até 200 pessoas com chamada de vídeo ao vivo.",
+    "texto": "Nosso espaço de oração online oferece sala de estudo com vídeo para até 200 participantes. Conecte-se de qualquer lugar!\n\nAcesse: https://igreja-deploy.vercel.app/oracao.html",
+    "imagem": "https://res.cloudinary.com/dt994epgb/image/upload/v1776838711/igreja-sem-nome/web-radio-banner.jpg",
+    "categoria": "Culto",
+    "link": "https://wp.automacaojs.club/"
   }
 ]
