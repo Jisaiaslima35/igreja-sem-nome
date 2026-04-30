@@ -7,126 +7,143 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: #0a0a0a; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: 'DM Sans', sans-serif; padding: 20px; }
-  .radio-widget { background: #111; border: 1px solid #222; border-radius: 20px; padding: 28px; width: 100%; max-width: 420px; position: relative; overflow: hidden; }
+  .radio-widget { background: #111; border: 1px solid #222; border-radius: 20px; padding: 28px; width: 100%; max-width: 480px; margin: 0 auto; position: relative; overflow: hidden; font-family: 'DM Sans', sans-serif; }
   .radio-widget::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #e63946, #f4a261, #e63946); background-size: 200% 100%; animation: slideGrad 3s linear infinite; }
   @keyframes slideGrad { 0% { background-position: 0% 0%; } 100% { background-position: 200% 0%; } }
   .widget-header { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; }
   .live-dot { width: 8px; height: 8px; background: #e63946; border-radius: 50%; animation: pulse 1.5s ease-in-out infinite; flex-shrink: 0; }
-  @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.8); } }
-  .widget-header span { font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #e63946; }
-  .widget-header .station { margin-left: auto; font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: #fff; letter-spacing: 1px; }
+  @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.3; transform: scale(0.8); } }
+  .live-text { font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #e63946; }
+  .station-name { margin-left: auto; font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: #fff; letter-spacing: 1px; }
   .now-playing { background: #1a1a1a; border-radius: 14px; padding: 20px; margin-bottom: 16px; border: 1px solid #2a2a2a; }
-  .now-label { font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 10px; }
+  .now-label { font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 12px; }
   .song-info { display: flex; align-items: center; gap: 14px; }
   .vinyl { width: 52px; height: 52px; border-radius: 50%; background: conic-gradient(#222 0deg, #333 60deg, #222 120deg, #333 180deg, #222 240deg, #333 300deg, #222 360deg); flex-shrink: 0; position: relative; animation: spin 4s linear infinite; }
   .vinyl::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 14px; height: 14px; background: #111; border-radius: 50%; border: 2px solid #333; }
   @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-  .song-title { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: #fff; letter-spacing: 0.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1.1; }
-  .song-artist { font-size: 13px; color: #666; margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .song-text { flex: 1; min-width: 0; }
+  .song-title { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: #fff; line-height: 1.1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: opacity 0.3s; }
+  .song-artist { font-size: 13px; color: #666; margin-top: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: opacity 0.3s; }
+  .song-title.fade, .song-artist.fade { opacity: 0; }
   .wave-bar { display: flex; align-items: flex-end; gap: 3px; height: 20px; margin-top: 14px; }
   .wave-bar span { display: block; width: 3px; background: #e63946; border-radius: 2px; animation: wave 0.8s ease-in-out infinite alternate; opacity: 0.7; }
-  .wave-bar span:nth-child(1) { animation-delay: 0s; } .wave-bar span:nth-child(2) { animation-delay: 0.1s; } .wave-bar span:nth-child(3) { animation-delay: 0.2s; } .wave-bar span:nth-child(4) { animation-delay: 0.3s; } .wave-bar span:nth-child(5) { animation-delay: 0.15s; } .wave-bar span:nth-child(6) { animation-delay: 0.05s; } .wave-bar span:nth-child(7) { animation-delay: 0.25s; } .wave-bar span:nth-child(8) { animation-delay: 0.35s; }
+  .wave-bar span:nth-child(1){animation-delay:0.00s} .wave-bar span:nth-child(2){animation-delay:0.10s} .wave-bar span:nth-child(3){animation-delay:0.20s} .wave-bar span:nth-child(4){animation-delay:0.30s} .wave-bar span:nth-child(5){animation-delay:0.15s} .wave-bar span:nth-child(6){animation-delay:0.05s} .wave-bar span:nth-child(7){animation-delay:0.25s} .wave-bar span:nth-child(8){animation-delay:0.35s}
   @keyframes wave { from { height: 4px; } to { height: 18px; } }
-  .playlist-section { margin-top: 4px; }
+  .player-controls { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+  .btn-play { width: 52px; height: 52px; border-radius: 50%; background: #e63946; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s, transform 0.1s; flex-shrink: 0; }
+  .btn-play:hover { background: #c1121f; } .btn-play:active { transform: scale(0.95); } .btn-play svg { width: 20px; height: 20px; fill: #fff; }
+  .volume-wrap { flex: 1; display: flex; align-items: center; gap: 10px; }
+  .vol-icon { color: #555; font-size: 14px; }
+  .volume-slider { flex: 1; -webkit-appearance: none; height: 4px; border-radius: 2px; background: #333; outline: none; cursor: pointer; }
+  .volume-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 14px; height: 14px; border-radius: 50%; background: #e63946; cursor: pointer; }
+  .status-text { font-size: 11px; color: #444; letter-spacing: 1px; text-transform: uppercase; min-width: 60px; text-align: right; }
   .playlist-label { font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #444; margin-bottom: 10px; padding-left: 4px; }
   .playlist-item { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 10px; transition: background 0.2s; }
   .playlist-item:hover { background: #1a1a1a; }
   .track-num { font-family: 'Bebas Neue', sans-serif; font-size: 14px; color: #333; width: 18px; text-align: center; flex-shrink: 0; }
-  .track-name { font-size: 13px; font-weight: 500; color: #ccc; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .track-info { flex: 1; min-width: 0; }
+  .track-name { font-size: 13px; font-weight: 500; color: #bbb; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .track-artist { font-size: 11px; color: #444; margin-top: 1px; }
-  .player-section { margin-top: 20px; border-top: 1px solid #1e1e1e; padding-top: 20px; }
-  .player-section iframe { width: 100%; border-radius: 10px; border: none; }
-  .loading-text { color: #444; font-size: 13px; text-align: center; padding: 10px 0; }
-  .song-title, .song-artist { transition: opacity 0.4s ease; }
-  .song-title.updating, .song-artist.updating { opacity: 0; }
+  .empty-text { font-size: 12px; color: #333; text-align: center; padding: 12px 0; }
 </style>
 </head>
-<body>
+<body style="background:#0d0d0d;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px;">
 <div class="radio-widget">
   <div class="widget-header">
     <div class="live-dot"></div>
-    <span>Ao vivo</span>
-    <div class="station">Rádio Libertação</div>
+    <span class="live-text">Ao vivo</span>
+    <div class="station-name">Rádio Libertação</div>
   </div>
   <div class="now-playing">
     <div class="now-label">Tocando agora</div>
     <div class="song-info">
-      <div class="vinyl" id="vinyl"></div>
+      <div class="vinyl"></div>
       <div class="song-text">
-        <div class="song-title" id="song-title">Carregando...</div>
+        <div class="song-title" id="song-title">Aguardando...</div>
         <div class="song-artist" id="song-artist">Rádio Gospel 24h</div>
       </div>
     </div>
-    <div class="wave-bar">
-      <span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span>
+    <div class="wave-bar"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  </div>
+  <div class="player-controls">
+    <button class="btn-play" id="btn-play" onclick="togglePlay()">
+      <svg id="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      <svg id="icon-pause" viewBox="0 0 24 24" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+    </button>
+    <div class="volume-wrap">
+      <span class="vol-icon">🔈</span>
+      <input type="range" class="volume-slider" id="volume" min="0" max="100" value="80" oninput="setVolume(this.value)">
+      <span class="vol-icon">🔊</span>
     </div>
+    <span class="status-text" id="status">Parado</span>
   </div>
-  <div class="playlist-section">
-    <div class="playlist-label">Últimas tocadas</div>
-    <div id="playlist-items"><div class="loading-text">Buscando playlist...</div></div>
-  </div>
-  <div class="player-section">
-    <iframe src="https://zeno.fm/player/rr267spubfhvv" height="60" scrolling="no"></iframe>
-  </div>
+  <div class="playlist-label">Últimas tocadas</div>
+  <div id="playlist-items"><div class="empty-text">Aguardando músicas...</div></div>
 </div>
 <script>
-  const ZENO_STATION = 'rr267spubfhvv';
-  let lastTitle = '';
+  const MOUNT_ID = '2lakgfphuy7tv';
+  const STREAM_URL = 'https://stream.zeno.fm/' + MOUNT_ID;
+  let audio = new Audio();
+  audio.volume = 0.8;
+  let playing = false;
   let history = [];
+  let lastTitle = '';
 
-  async function fetchNowPlaying() {
-    try {
-      const res = await fetch(`https://api.zeno.fm/mounts/metadata/subscribe/${ZENO_STATION}`, { signal: AbortSignal.timeout(5000) });
-      if (!res.ok) throw new Error('API indisponível');
-      const data = await res.json();
-      const title = data?.streamTitle || data?.title || '';
-      if (title && title !== lastTitle) { updateNowPlaying(title); lastTitle = title; }
-    } catch (e) { }
+  function togglePlay() {
+    if (playing) {
+      audio.pause(); audio.src = ''; playing = false;
+      document.getElementById('icon-play').style.display = 'block';
+      document.getElementById('icon-pause').style.display = 'none';
+      document.getElementById('status').textContent = 'Parado';
+    } else {
+      audio.src = STREAM_URL + '?t=' + Date.now();
+      audio.play().catch(function(){});
+      playing = true;
+      document.getElementById('icon-play').style.display = 'none';
+      document.getElementById('icon-pause').style.display = 'block';
+      document.getElementById('status').textContent = 'Ouvindo';
+    }
   }
 
-  function updateNowPlaying(rawTitle) {
-    let title = rawTitle;
-    let artist = 'Rádio Libertação';
-    if (rawTitle.includes(' - ')) {
-      const parts = rawTitle.split(' - ');
-      artist = parts[0].trim();
-      title = parts.slice(1).join(' - ').trim();
-    }
-    if (history.length === 0 || history[0].title !== title) {
-      history.unshift({ title, artist });
-      if (history.length > 5) history.pop();
-      renderPlaylist();
-    }
-    const titleEl = document.getElementById('song-title');
-    const artistEl = document.getElementById('song-artist');
-    titleEl.classList.add('updating');
-    artistEl.classList.add('updating');
-    setTimeout(() => {
-      titleEl.textContent = title;
-      artistEl.textContent = artist;
-      titleEl.classList.remove('updating');
-      artistEl.classList.remove('updating');
-    }, 400);
+  function setVolume(v) { audio.volume = v / 100; }
+
+  function connectMetadata() {
+    var es = new EventSource('https://api.zeno.fm/mounts/metadata/subscribe/' + MOUNT_ID);
+    es.onmessage = function(e) {
+      try {
+        var data = JSON.parse(e.data);
+        var raw = data.streamTitle || '';
+        if (raw && raw !== lastTitle) { lastTitle = raw; processTitle(raw); }
+      } catch(_) {}
+    };
+    es.onerror = function() { es.close(); setTimeout(connectMetadata, 10000); };
+  }
+
+  function processTitle(raw) {
+    var title = raw; var artist = 'Rádio Libertação';
+    if (raw.includes(' - ')) { var parts = raw.split(' - '); artist = parts[0].trim(); title = parts.slice(1).join(' - ').trim(); }
+    history.unshift({ title: title, artist: artist });
+    if (history.length > 6) history.pop();
+    updateUI(title, artist); renderPlaylist();
+  }
+
+  function updateUI(title, artist) {
+    var t = document.getElementById('song-title'); var a = document.getElementById('song-artist');
+    t.classList.add('fade'); a.classList.add('fade');
+    setTimeout(function() { t.textContent = title; a.textContent = artist; t.classList.remove('fade'); a.classList.remove('fade'); }, 300);
   }
 
   function renderPlaylist() {
-    const container = document.getElementById('playlist-items');
-    const past = history.slice(1);
-    if (past.length === 0) { container.innerHTML = '<div class="loading-text">Histórico ainda vazio</div>'; return; }
-    container.innerHTML = past.map((item, i) => `
-      <div class="playlist-item">
-        <div class="track-num">${i + 1}</div>
-        <div class="track-info">
-          <div class="track-name">${item.title}</div>
-          <div class="track-artist">${item.artist}</div>
-        </div>
-      </div>`).join('');
+    var container = document.getElementById('playlist-items');
+    var past = history.slice(1);
+    if (past.length === 0) { container.innerHTML = '<div class="empty-text">Histórico ainda vazio</div>'; return; }
+    container.innerHTML = past.map(function(item, i) {
+      return '<div class="playlist-item"><div class="track-num">' + (i+1) + '</div><div class="track-info"><div class="track-name">' + esc(item.title) + '</div><div class="track-artist">' + esc(item.artist) + '</div></div></div>';
+    }).join('');
   }
 
-  fetchNowPlaying();
-  setInterval(fetchNowPlaying, 15000);
+  function esc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  connectMetadata();
 </script>
 </body>
 </html>
