@@ -54,6 +54,46 @@
     <span class="live-text">Ao vivo</span>
     <div class="station-name">Rádio Libertação</div>
   </div>
+  <!-- Botão Locutor IA -->
+  <div id="locutor-btn" style="
+    display:flex;align-items:center;gap:8px;
+    background:#1a1a1a;border:1px solid #2a2a2a;
+    border-radius:10px;padding:10px 14px;
+    margin-bottom:16px;cursor:default;
+  ">
+    <div id="locutor-dot" style="
+      width:10px;height:10px;border-radius:50%;
+      background:#333;flex-shrink:0;
+      transition:background 0.4s;
+    "></div>
+    <span id="locutor-label" style="
+      font-size:12px;color:#555;
+      letter-spacing:1px;text-transform:uppercase;
+    ">Locutor IA</span>
+    <span id="locutor-uptime" style="
+      margin-left:auto;font-size:11px;color:#333;
+    "></span>
+  </div>
+  <!-- Botão Locutor IA -->
+  <div id="locutor-btn" style="
+    display:flex;align-items:center;gap:8px;
+    background:#1a1a1a;border:1px solid #2a2a2a;
+    border-radius:10px;padding:10px 14px;
+    margin-bottom:16px;cursor:default;
+  ">
+    <div id="locutor-dot" style="
+      width:10px;height:10px;border-radius:50%;
+      background:#333;flex-shrink:0;
+      transition:background 0.4s;
+    "></div>
+    <span id="locutor-label" style="
+      font-size:12px;color:#555;
+      letter-spacing:1px;text-transform:uppercase;
+    ">Locutor IA</span>
+    <span id="locutor-uptime" style="
+      margin-left:auto;font-size:11px;color:#333;
+    "></span>
+  </div>
   <div class="now-playing">
     <div class="now-label">Tocando agora</div>
     <div class="song-info">
@@ -143,6 +183,62 @@
   }
 
   function esc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  function checkLocutorStatus() {
+    fetch('http://156.67.31.108:3200/status.json?t=' + Date.now())
+      .then(function(r){ return r.json(); })
+      .then(function(data) {
+        var dot = document.getElementById('locutor-dot');
+        var label = document.getElementById('locutor-label');
+        var uptime = document.getElementById('locutor-uptime');
+        if (data.status === 'on') {
+          dot.style.background = '#2dc653';
+          dot.style.boxShadow = '0 0 8px #2dc653';
+          label.style.color = '#2dc653';
+          label.textContent = 'Locutor IA • Online';
+          uptime.textContent = data.uptime || '';
+        } else {
+          dot.style.background = '#e63946';
+          dot.style.boxShadow = '0 0 8px #e63946';
+          label.style.color = '#e63946';
+          label.textContent = 'Locutor IA • Offline';
+          uptime.textContent = '';
+        }
+      })
+      .catch(function() {
+        document.getElementById('locutor-label').textContent = 'Locutor IA • Verificando...';
+      });
+  }
+  checkLocutorStatus();
+  setInterval(checkLocutorStatus, 30000);
+
+  function checkLocutorStatus() {
+    fetch('http://156.67.31.108:3200/status.json?t=' + Date.now())
+      .then(function(r){ return r.json(); })
+      .then(function(data) {
+        var dot = document.getElementById('locutor-dot');
+        var label = document.getElementById('locutor-label');
+        var uptime = document.getElementById('locutor-uptime');
+        if (data.status === 'on') {
+          dot.style.background = '#2dc653';
+          dot.style.boxShadow = '0 0 8px #2dc653';
+          label.style.color = '#2dc653';
+          label.textContent = 'Locutor IA • Online';
+          uptime.textContent = data.uptime || '';
+        } else {
+          dot.style.background = '#e63946';
+          dot.style.boxShadow = '0 0 8px #e63946';
+          label.style.color = '#e63946';
+          label.textContent = 'Locutor IA • Offline';
+          uptime.textContent = '';
+        }
+      })
+      .catch(function() {
+        document.getElementById('locutor-label').textContent = 'Locutor IA • Verificando...';
+      });
+  }
+  checkLocutorStatus();
+  setInterval(checkLocutorStatus, 30000);
   connectMetadata();
 </script>
 </body>
