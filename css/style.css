@@ -278,6 +278,81 @@ ul { list-style: none; }
 .chat-hero-footer { text-align: center; margin-top: 14px; }
 .chat-tip { color: #fbd38d; font-size: 0.85rem; font-style: italic; }
 
+/* ============ AUDIO SENDER (BOTÃO DE ENVIAR ÁUDIO) ============ */
+.audio-sender {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    border: 2px solid #f6ad55;
+    text-align: center;
+}
+.audio-sender h3 {
+    color: #1a365d;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+.audio-sender-sub {
+    color: #4a5568;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+.audio-sender-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+.btn-mic {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #d4a73a, #f6ad55);
+    color: #1a365d;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 15px rgba(212,167,58,0.4);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+.btn-mic:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(212,167,58,0.6);
+}
+.btn-mic.recording {
+    background: #ef4444;
+    color: #fff;
+    animation: micPulse 1s ease-in-out infinite;
+}
+.btn-mic.uploading {
+    background: #3182ce;
+    color: #fff;
+    cursor: wait;
+}
+@keyframes micPulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239,68,68,0.7); }
+    50% { transform: scale(1.1); box-shadow: 0 0 0 16px rgba(239,68,68,0); }
+}
+.mic-status {
+    color: #718096;
+    font-size: 0.95rem;
+    font-weight: 500;
+    max-width: 400px;
+    text-align: left;
+}
+.audio-sender-hint {
+    color: #a0aec0;
+    font-size: 0.8rem;
+    font-style: italic;
+    margin-top: 12px;
+}
+
 /* ============ SECTIONS ============ */
 .latest-posts, .eventos {
     background: #fff;

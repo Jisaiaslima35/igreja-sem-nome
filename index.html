@@ -31,7 +31,7 @@
         </div>
     </header>
 
-    <!-- BANNER NOVO -->
+    <!-- BANNER NOVO (FIX: agora fica no TOPO, antes do chat) -->
     <div class="banner">
         <div class="container banner-inner">
             <span class="banner-badge">📡 AO VIVO 24H</span>
@@ -39,7 +39,7 @@
         </div>
     </div>
 
-    <!-- HERO COM BANNER NOVO -->
+    <!-- HERO -->
     <section class="hero">
         <div class="container hero-inner">
             <h1>Bem-vindo à Rádio Louvor &amp; Gratidão</h1>
@@ -50,41 +50,33 @@
         </div>
     </section>
 
-    <!-- LAYOUT 3 COLUNAS: ESQUERDA | CENTRO (CHAT) | DIREITA -->
+    <!-- LAYOUT 3 COLUNAS -->
     <div class="container main-grid">
 
         <!-- COLUNA ESQUERDA -->
         <aside class="col-left">
-
-            <!-- PLAYER -->
             <div class="widget">
                 <h3>🎵 Ouça Agora</h3>
                 <iframe src="radio-player.html" width="100%" height="520" frameborder="0" scrolling="no" style="border-radius:16px;border:none;"></iframe>
             </div>
-
-            <!-- PEÇA SUA MÚSICA -->
             <div class="widget">
                 <h3>🎤 Peça sua Música</h3>
                 <p class="widget-sub">Mande seu pedido e o Irmão Hermes coloca no ar!</p>
                 <a href="#chat-ao-vivo" class="btn btn-block">Pedir no Chat</a>
             </div>
-
-            <!-- OUVINTE DO MÊS -->
             <div class="widget widget-highlight">
                 <h3>⭐ Ouvinte do Mês</h3>
                 <p class="widget-sub">Em breve!</p>
             </div>
-
         </aside>
 
         <!-- COLUNA CENTRAL: CHAT DESTACADO -->
         <main class="col-center">
 
-            <!-- BATE-PAPO HERMES - QUADRADO CHAMATIVO -->
+            <!-- BATE-PAPO HERMES -->
             <section id="chat-ao-vivo" class="chat-hero">
                 <div class="chat-hero-header">
-                    <span class="chat-live-dot"></span>
-                    <span class="chat-live-text">AO VIVO</span>
+                    <span class="chat-live-text"><span class="chat-live-dot"></span> AO VIVO</span>
                     <h2>💬 Bate-Papo com o Irmão Hermes</h2>
                     <p>Converse ao vivo, peça oração, música e versículo!</p>
                 </div>
@@ -104,6 +96,26 @@
                 </div>
             </section>
 
+            <!-- BOTÃO DE ENVIAR ÁUDIO -->
+            <section class="audio-sender">
+                <h3>🎙️ Envie áudio ao Hermes</h3>
+                <p class="audio-sender-sub">Grave sua mensagem de voz — a gente transcreve e manda no chat pra você!</p>
+                <div class="audio-sender-controls">
+                    <button class="btn-mic" id="btn-mic" aria-label="Gravar áudio" title="Gravar áudio">
+                        <svg id="mic-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="2" width="6" height="12" rx="3"/>
+                            <path d="M5 10a7 7 0 0 0 14 0"/>
+                            <line x1="12" y1="19" x2="12" y2="22"/>
+                        </svg>
+                        <svg id="mic-stop" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="display:none">
+                            <rect x="6" y="6" width="12" height="12" rx="2"/>
+                        </svg>
+                    </button>
+                    <div class="mic-status" id="mic-status">Toque pra gravar sua mensagem de voz</div>
+                </div>
+                <p class="audio-sender-hint">💡 Funciona melhor no Chrome/Edge. O reconhecimento de voz é em pt-BR.</p>
+            </section>
+
             <!-- ÚLTIMAS PUBLICAÇÕES -->
             <section class="latest-posts">
                 <h2>📰 Últimas Publicações</h2>
@@ -112,7 +124,7 @@
                 <a href="posts.html" class="btn">Ver todas as publicações</a>
             </section>
 
-            <!-- ESPAÇO DE ORAÇÃO (CTA) -->
+            <!-- CTA ORAÇÃO -->
             <div class="prayer-cta">
                 <p class="prayer-cta-label">🕊️ Todo domingo e terça-feira</p>
                 <a href="oracao.html" class="prayer-cta-btn">
@@ -132,8 +144,6 @@
 
         <!-- COLUNA DIREITA: TOP 10 -->
         <aside class="col-right">
-
-            <!-- TOP 10 LOUVORES -->
             <div class="widget widget-top10">
                 <h3>🏆 Top 10 Louvores</h3>
                 <p class="widget-sub">Peça qualquer um no chat do Hermes!</p>
@@ -150,14 +160,11 @@
                     <li><span class="rank">10</span><div class="song"><strong>Dono da Promessa</strong><small>Kellen Byanca</small></div><button class="ask-btn" data-song="Dono da Promessa - Kellen Byanca">Pedir</button></li>
                 </ol>
             </div>
-
-            <!-- APLICATIVO -->
             <div class="widget">
                 <h3>📱 Baixe o App</h3>
                 <p class="widget-sub">Ouça a rádio direto no seu celular</p>
                 <a href="#" class="btn btn-store">📲 Em breve na Play Store</a>
             </div>
-
         </aside>
 
     </div>
@@ -172,6 +179,7 @@
     </footer>
 
     <script src="js/app.js"></script>
+    <script src="js/audio-recorder.js"></script>
     <script>
     (function() {
         var hamburger = document.getElementById('hamburger');
@@ -189,19 +197,18 @@
             });
         }
 
-        // Botão "Pedir" do Top 10 → rola até o chat e abre prompt
+        // Botão "Pedir" do Top 10
         document.querySelectorAll('.ask-btn').forEach(function(btn) {
             btn.addEventListener('click', function() {
                 var song = btn.getAttribute('data-song');
                 var chatSection = document.getElementById('chat-ao-vivo');
                 if (chatSection) {
                     chatSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    // Tenta mandar mensagem no iframe (se for mesma origem, funciona)
                     try {
                         var iframe = chatSection.querySelector('iframe');
                         if (iframe && iframe.contentWindow) {
                             iframe.contentWindow.postMessage({
-                                type: 'prefill',
+                                type: 'prefill-message',
                                 message: 'Toca ' + song
                             }, '*');
                         }
