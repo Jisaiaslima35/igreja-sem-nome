@@ -2,7 +2,7 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import json, os, urllib.parse
 
-POSTS_FILE = '/root/igreja-sem-nome-site/igreja-sem-nome/data/posts.json'
+POSTS_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'posts.json')
 
 def load_posts():
     with open(POSTS_FILE, 'r') as f:

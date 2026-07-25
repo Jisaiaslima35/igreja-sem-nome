@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Igreja Sem Nome - Página Inicial</title>
+    <title>Rádio Louvor e Gratidão - A rádio que toca sua alma</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
         <div class="container header-inner">
-            <a href="index.html" class="logo">Igreja Sem Nome</a>
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🎙️</span>
+                <span class="logo-text">Rádio Louvor<br><em>&amp; Gratidão</em></span>
+            </a>
             <nav class="nav" id="nav">
                 <ul class="nav-list">
                     <li><a href="index.html" class="nav-link active">Início</a></li>
@@ -27,50 +31,136 @@
         </div>
     </header>
 
+    <!-- BANNER NOVO -->
     <div class="banner">
-        <p>🎉 Bem-vindo à Igreja Sem Nome! Cultos aos domingos às 18h. Junte-se a nós! 🎉</p>
+        <div class="container banner-inner">
+            <span class="banner-badge">📡 AO VIVO 24H</span>
+            <p>Cultos, louvores e oração. A rádio que toca sua alma. 🙏✨</p>
+        </div>
     </div>
 
-    <section class="hero" style="padding:0;background:#1a365d;">
-        <img src="https://res.cloudinary.com/dt994epgb/image/upload/v1776829785/Reels/ChatGPT_Image_22_de_abr._de_2026_00_49_23.png"
-             alt="Banner Igreja Sem Nome"
-             style="width:100%;height:auto;display:block;object-fit:contain;">
-    </section>
-
-    <section class="radio">
-        <h2>Ouça a Nossa Rádio Ao Vivo</h2>
-        <iframe src="radio-player.html" width="100%" height="520" frameborder="0" scrolling="no" style="border-radius:16px;max-width:440px;display:block;margin:0 auto;border:none;"></iframe>
-    </section>
-
-    <section class="latest-posts">
-        <h2>Últimas Publicações</h2>
-        <p style="color:#666; max-width:600px; margin: 0 auto 30px;">Fique por dentro das últimas novidades e recursos da nossa igreja</p>
-        <div class="grid" id="latestPosts"></div>
-        <a href="posts.html" class="btn" style="margin-top: 30px;">Ver Todas as Publicações</a>
-    </section>
-
-    <section class="chat-section">
-        <h2>Chat ao Vivo</h2>
-        <div class="chat-embed">
-            <script src="https://minnit.chat/js/embed.js?c=1772345192" defer></script>
-            <span style="display: none;" class="minnit-chat-sembed" data-chatname="https://organizations.minnit.chat/173146784220994/c/Main?embed" data-style="width:100%; height:500px; max-height:80vh;" data-version="1.55">Chat</span>
+    <!-- HERO COM BANNER NOVO -->
+    <section class="hero">
+        <div class="container hero-inner">
+            <h1>Bem-vindo à Rádio Louvor &amp; Gratidão</h1>
+            <p>Programação gospel 24 horas, com o Irmão Hermes, nosso locutor virtual, e os melhores louvores do Brasil.</p>
+            <a href="#chat-ao-vivo" class="btn btn-pulse">
+                <span class="btn-dot"></span> Conversar com o Hermes agora
+            </a>
         </div>
     </section>
 
-        <!-- BOTAO ESPACO DE ORACAO -->
-    <div style="background:#f7fafc;padding:40px 20px;text-align:center;border-bottom:3px solid #e2e8f0;">
-        <p style="color:#718096;font-size:0.9rem;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px;font-weight:600;">🕊️ Todo domingo e terça-feira</p>
-        <a href="oracao.html" style="display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,#1a365d,#2c5282);color:#fff;padding:16px 36px;border-radius:50px;font-weight:700;font-size:1.1rem;box-shadow:0 6px 20px rgba(26,54,93,0.4);text-decoration:none;">
-            <span style="width:10px;height:10px;background:#f6ad55;border-radius:50%;animation:pulseOracao 1.5s infinite;display:inline-block;"></span>
-            🙏 Espaço de Oração e Estudos
-        </a>
-        <style>@keyframes pulseOracao{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.3;transform:scale(1.5)}}</style>
-        <p style="color:#718096;font-size:0.85rem;margin-top:14px;">Reuniões ao vivo com câmera e microfone • Pedidos de oração</p>
+    <!-- LAYOUT 3 COLUNAS: ESQUERDA | CENTRO (CHAT) | DIREITA -->
+    <div class="container main-grid">
+
+        <!-- COLUNA ESQUERDA -->
+        <aside class="col-left">
+
+            <!-- PLAYER -->
+            <div class="widget">
+                <h3>🎵 Ouça Agora</h3>
+                <iframe src="radio-player.html" width="100%" height="520" frameborder="0" scrolling="no" style="border-radius:16px;border:none;"></iframe>
+            </div>
+
+            <!-- PEÇA SUA MÚSICA -->
+            <div class="widget">
+                <h3>🎤 Peça sua Música</h3>
+                <p class="widget-sub">Mande seu pedido e o Irmão Hermes coloca no ar!</p>
+                <a href="#chat-ao-vivo" class="btn btn-block">Pedir no Chat</a>
+            </div>
+
+            <!-- OUVINTE DO MÊS -->
+            <div class="widget widget-highlight">
+                <h3>⭐ Ouvinte do Mês</h3>
+                <p class="widget-sub">Em breve!</p>
+            </div>
+
+        </aside>
+
+        <!-- COLUNA CENTRAL: CHAT DESTACADO -->
+        <main class="col-center">
+
+            <!-- BATE-PAPO HERMES - QUADRADO CHAMATIVO -->
+            <section id="chat-ao-vivo" class="chat-hero">
+                <div class="chat-hero-header">
+                    <span class="chat-live-dot"></span>
+                    <span class="chat-live-text">AO VIVO</span>
+                    <h2>💬 Bate-Papo com o Irmão Hermes</h2>
+                    <p>Converse ao vivo, peça oração, música e versículo!</p>
+                </div>
+                <div class="chat-hero-frame">
+                    <iframe
+                        src="https://nicho-hub-734250437575.us-west2.run.app"
+                        width="100%"
+                        height="640"
+                        frameborder="0"
+                        style="border-radius:14px;border:none;display:block;background:#0a0a0a;"
+                        title="Chat ao vivo - Rádio Louvor e Gratidão"
+                        allow="microphone">
+                    </iframe>
+                </div>
+                <div class="chat-hero-footer">
+                    <span class="chat-tip">💡 Dica: peça "manda a paz" pra ouvir o locutor no ar 🎙️</span>
+                </div>
+            </section>
+
+            <!-- ÚLTIMAS PUBLICAÇÕES -->
+            <section class="latest-posts">
+                <h2>📰 Últimas Publicações</h2>
+                <p class="section-sub">Fique por dentro das novidades da rádio</p>
+                <div class="grid" id="latestPosts"></div>
+                <a href="posts.html" class="btn">Ver todas as publicações</a>
+            </section>
+
+            <!-- ESPAÇO DE ORAÇÃO (CTA) -->
+            <div class="prayer-cta">
+                <p class="prayer-cta-label">🕊️ Todo domingo e terça-feira</p>
+                <a href="oracao.html" class="prayer-cta-btn">
+                    <span class="prayer-cta-dot"></span>
+                    🙏 Espaço de Oração e Estudos
+                </a>
+                <p class="prayer-cta-sub">Reuniões ao vivo com câmera e microfone • Pedidos de oração</p>
+            </div>
+
+            <!-- PRÓXIMOS EVENTOS -->
+            <section class="eventos">
+                <h2>📅 Próximos Eventos</h2>
+                <div class="grid" id="postGrid"></div>
+            </section>
+
+        </main>
+
+        <!-- COLUNA DIREITA: TOP 10 -->
+        <aside class="col-right">
+
+            <!-- TOP 10 LOUVORES -->
+            <div class="widget widget-top10">
+                <h3>🏆 Top 10 Louvores</h3>
+                <p class="widget-sub">Peça qualquer um no chat do Hermes!</p>
+                <ol class="top10-list">
+                    <li><span class="rank">1</span><div class="song"><strong>É Ele</strong><small>Drops INA</small></div><button class="ask-btn" data-song="É Ele - Drops INA">Pedir</button></li>
+                    <li><span class="rank">2</span><div class="song"><strong>Eu Te Levantarei</strong><small>Padre Marcelo Rossi</small></div><button class="ask-btn" data-song="Eu Te Levantarei - Padre Marcelo Rossi">Pedir</button></li>
+                    <li><span class="rank">3</span><div class="song"><strong>Reacende a Chama</strong><small>Sued Silva</small></div><button class="ask-btn" data-song="Reacende a Chama - Sued Silva">Pedir</button></li>
+                    <li><span class="rank">4</span><div class="song"><strong>Cordeiro e Leão</strong><small>Jefferson &amp; Suellen</small></div><button class="ask-btn" data-song="Cordeiro e Leão - Jefferson e Suellen">Pedir</button></li>
+                    <li><span class="rank">5</span><div class="song"><strong>Deus Está Aqui (Medley)</strong><small>Gabriela Rocha</small></div><button class="ask-btn" data-song="Deus Está Aqui - Gabriela Rocha">Pedir</button></li>
+                    <li><span class="rank">6</span><div class="song"><strong>Escape</strong><small>Renascer Praise</small></div><button class="ask-btn" data-song="Escape - Renascer Praise">Pedir</button></li>
+                    <li><span class="rank">7</span><div class="song"><strong>Como Flecha</strong><small>Samuel Dias</small></div><button class="ask-btn" data-song="Como Flecha - Samuel Dias">Pedir</button></li>
+                    <li><span class="rank">8</span><div class="song"><strong>Toda Terra</strong><small>Gabriela Rocha</small></div><button class="ask-btn" data-song="Toda Terra - Gabriela Rocha">Pedir</button></li>
+                    <li><span class="rank">9</span><div class="song"><strong>Ovelhinha</strong><small>Isadora Pompeo</small></div><button class="ask-btn" data-song="Ovelhinha - Isadora Pompeo">Pedir</button></li>
+                    <li><span class="rank">10</span><div class="song"><strong>Dono da Promessa</strong><small>Kellen Byanca</small></div><button class="ask-btn" data-song="Dono da Promessa - Kellen Byanca">Pedir</button></li>
+                </ol>
+            </div>
+
+            <!-- APLICATIVO -->
+            <div class="widget">
+                <h3>📱 Baixe o App</h3>
+                <p class="widget-sub">Ouça a rádio direto no seu celular</p>
+                <a href="#" class="btn btn-store">📲 Em breve na Play Store</a>
+            </div>
+
+        </aside>
+
     </div>
-    <section class="eventos">
-        <h2>Próximos Eventos</h2>
-        <div class="grid" id="postGrid"></div>
-    </section>
 
     <footer class="footer">
         <div class="social">
@@ -78,7 +168,7 @@
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
-        <p>&copy; 2026 Igreja Sem Nome</p>
+        <p>&copy; 2026 Rádio Louvor &amp; Gratidão — A rádio que toca sua alma 🎙️🙏</p>
     </footer>
 
     <script src="js/app.js"></script>
@@ -98,9 +188,30 @@
                 }
             });
         }
+
+        // Botão "Pedir" do Top 10 → rola até o chat e abre prompt
+        document.querySelectorAll('.ask-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var song = btn.getAttribute('data-song');
+                var chatSection = document.getElementById('chat-ao-vivo');
+                if (chatSection) {
+                    chatSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Tenta mandar mensagem no iframe (se for mesma origem, funciona)
+                    try {
+                        var iframe = chatSection.querySelector('iframe');
+                        if (iframe && iframe.contentWindow) {
+                            iframe.contentWindow.postMessage({
+                                type: 'prefill',
+                                message: 'Toca ' + song
+                            }, '*');
+                        }
+                    } catch (e) {}
+                }
+            });
+        });
     })();
     </script>
-    <!-- Tawk.to Chat -->
+    <!-- Tawk.to Chat (suporte) -->
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){
@@ -112,27 +223,5 @@
     s0.parentNode.insertBefore(s1,s0);
     })();
     </script>
-    <!-- RADIO PLAYER FIXO -->
-    <div style="position:fixed;bottom:24px;left:24px;z-index:9999;">
-        <script type="text/javascript" src="https://hosted.muses.org/mrp.js"></script>
-        <script type="text/javascript">
-        MRP.insert({
-            "url":"https://stream.zeno.fm/2lakgfphuy7tv",
-            "lang":"pt",
-            "codec":"mp3",
-            "volume":92,
-            "autoplay":true,
-            "forceHTML5":true,
-            "jsevents":true,
-            "buffering":0,
-            "title":"Radio Igreja",
-            "welcome":"Bem Vindos",
-            "wmode":"transparent",
-            "skin":"scradio",
-            "width":160,
-            "height":100
-        });
-        </script>
-    </div>
 </body>
 </html>
