@@ -83,8 +83,9 @@ ul { list-style: none; }
     color: #fff;
     padding: 18px 20px;
     box-shadow: 0 4px 15px rgba(197,48,48,0.2);
+    text-align: center;
 }
-.banner-inner { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+.banner-inner { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; max-width: 1300px; margin: 0 auto; }
 .banner-badge {
     background: #fff;
     color: #c53030;
@@ -94,9 +95,10 @@ ul { list-style: none; }
     font-size: 0.85rem;
     letter-spacing: 1px;
     animation: pulseBadge 2s ease-in-out infinite;
+    display: inline-block;
 }
 @keyframes pulseBadge { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-.banner p { font-size: 1.05rem; font-weight: 500; margin: 0; }
+.banner p { font-size: 1.05rem; font-weight: 500; margin: 0; display: inline-block; }
 
 /* ============ HERO ============ */
 .hero {
@@ -280,40 +282,52 @@ ul { list-style: none; }
 
 /* ============ AUDIO SENDER (BOTÃO DE ENVIAR ÁUDIO) ============ */
 .audio-sender {
-    background: #fff;
-    border-radius: 16px;
-    padding: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-    border: 2px solid #f6ad55;
+    background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+    border-radius: 20px;
+    padding: 36px 30px;
+    box-shadow: 0 8px 30px rgba(26,54,93,0.3);
+    border: 4px solid #d4a73a;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
+.audio-sender::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #d4a73a, #f6ad55, #d4a73a);
+    background-size: 200% 100%;
+    animation: slideGrad 3s linear infinite;
+}
+@keyframes slideGrad { 0% { background-position: 0% 0%; } 100% { background-position: 200% 0%; } }
 .audio-sender h3 {
-    color: #1a365d;
-    font-size: 1.3rem;
+    color: #f6ad55;
+    font-size: 1.5rem;
     margin-bottom: 8px;
     font-weight: 700;
 }
 .audio-sender-sub {
-    color: #4a5568;
-    font-size: 0.95rem;
-    margin-bottom: 20px;
+    color: #e2e8f0;
+    font-size: 1rem;
+    margin-bottom: 24px;
 }
 .audio-sender-controls {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
+    gap: 20px;
     flex-wrap: wrap;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
 }
 .btn-mic {
-    width: 64px;
-    height: 64px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     background: linear-gradient(135deg, #d4a73a, #f6ad55);
     color: #1a365d;
-    border: 3px solid #fff;
-    box-shadow: 0 4px 15px rgba(212,167,58,0.4);
+    border: 4px solid #fff;
+    box-shadow: 0 6px 20px rgba(212,167,58,0.5);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -322,8 +336,8 @@ ul { list-style: none; }
     flex-shrink: 0;
 }
 .btn-mic:hover {
-    transform: scale(1.08);
-    box-shadow: 0 6px 20px rgba(212,167,58,0.6);
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(212,167,58,0.7);
 }
 .btn-mic.recording {
     background: #ef4444;
@@ -337,20 +351,21 @@ ul { list-style: none; }
 }
 @keyframes micPulse {
     0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239,68,68,0.7); }
-    50% { transform: scale(1.1); box-shadow: 0 0 0 16px rgba(239,68,68,0); }
+    50% { transform: scale(1.15); box-shadow: 0 0 0 20px rgba(239,68,68,0); }
 }
 .mic-status {
-    color: #718096;
-    font-size: 0.95rem;
+    color: #fff;
+    font-size: 1rem;
     font-weight: 500;
     max-width: 400px;
     text-align: left;
+    min-height: 1.2em;
 }
 .audio-sender-hint {
-    color: #a0aec0;
-    font-size: 0.8rem;
+    color: #cbd5e0;
+    font-size: 0.85rem;
     font-style: italic;
-    margin-top: 12px;
+    margin-top: 16px;
 }
 
 /* ============ SECTIONS ============ */
