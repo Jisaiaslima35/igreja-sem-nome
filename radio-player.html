@@ -3,18 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Widget Rádio Libertação</title>
+<title>Widget Rádio Louvor &amp; Gratidão</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   .radio-widget { background: #111; border: 1px solid #222; border-radius: 20px; padding: 28px; width: 100%; max-width: 480px; margin: 0 auto; position: relative; overflow: hidden; font-family: 'DM Sans', sans-serif; }
-  .radio-widget::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #e63946, #f4a261, #e63946); background-size: 200% 100%; animation: slideGrad 3s linear infinite; }
+  .radio-widget::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #f6ad55, #ed8936, #f6ad55); background-size: 200% 100%; animation: slideGrad 3s linear infinite; }
   @keyframes slideGrad { 0% { background-position: 0% 0%; } 100% { background-position: 200% 0%; } }
-  .widget-header { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; }
+  .widget-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
   .live-dot { width: 8px; height: 8px; background: #e63946; border-radius: 50%; animation: pulse 1.5s ease-in-out infinite; flex-shrink: 0; }
   @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.3; transform: scale(0.8); } }
   .live-text { font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #e63946; }
-  .station-name { margin-left: auto; font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: #fff; letter-spacing: 1px; }
+  .station-name { margin-left: auto; font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: #f6ad55; letter-spacing: 1px; }
+
+  /* Botão Locutor IA (SEM DUPLICAÇÃO) */
+  .locutor-row { display: flex; align-items: center; gap: 8px; background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 10px; padding: 10px 14px; margin-bottom: 16px; }
+  .locutor-dot { width: 10px; height: 10px; border-radius: 50%; background: #333; flex-shrink: 0; transition: background 0.4s; }
+  .locutor-label { font-size: 12px; color: #555; letter-spacing: 1px; text-transform: uppercase; }
+  .locutor-uptime { margin-left: auto; font-size: 11px; color: #333; }
+
   .now-playing { background: #1a1a1a; border-radius: 14px; padding: 20px; margin-bottom: 16px; border: 1px solid #2a2a2a; }
   .now-label { font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 12px; }
   .song-info { display: flex; align-items: center; gap: 14px; }
@@ -26,16 +33,16 @@
   .song-artist { font-size: 13px; color: #666; margin-top: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: opacity 0.3s; }
   .song-title.fade, .song-artist.fade { opacity: 0; }
   .wave-bar { display: flex; align-items: flex-end; gap: 3px; height: 20px; margin-top: 14px; }
-  .wave-bar span { display: block; width: 3px; background: #e63946; border-radius: 2px; animation: wave 0.8s ease-in-out infinite alternate; opacity: 0.7; }
+  .wave-bar span { display: block; width: 3px; background: #f6ad55; border-radius: 2px; animation: wave 0.8s ease-in-out infinite alternate; opacity: 0.7; }
   .wave-bar span:nth-child(1){animation-delay:0.00s} .wave-bar span:nth-child(2){animation-delay:0.10s} .wave-bar span:nth-child(3){animation-delay:0.20s} .wave-bar span:nth-child(4){animation-delay:0.30s} .wave-bar span:nth-child(5){animation-delay:0.15s} .wave-bar span:nth-child(6){animation-delay:0.05s} .wave-bar span:nth-child(7){animation-delay:0.25s} .wave-bar span:nth-child(8){animation-delay:0.35s}
   @keyframes wave { from { height: 4px; } to { height: 18px; } }
   .player-controls { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
-  .btn-play { width: 52px; height: 52px; border-radius: 50%; background: #e63946; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s, transform 0.1s; flex-shrink: 0; }
-  .btn-play:hover { background: #c1121f; } .btn-play:active { transform: scale(0.95); } .btn-play svg { width: 20px; height: 20px; fill: #fff; }
+  .btn-play { width: 52px; height: 52px; border-radius: 50%; background: #f6ad55; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s, transform 0.1s; flex-shrink: 0; }
+  .btn-play:hover { background: #ed8936; } .btn-play:active { transform: scale(0.95); } .btn-play svg { width: 20px; height: 20px; fill: #1a365d; }
   .volume-wrap { flex: 1; display: flex; align-items: center; gap: 10px; }
   .vol-icon { color: #555; font-size: 14px; }
   .volume-slider { flex: 1; -webkit-appearance: none; height: 4px; border-radius: 2px; background: #333; outline: none; cursor: pointer; }
-  .volume-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 14px; height: 14px; border-radius: 50%; background: #e63946; cursor: pointer; }
+  .volume-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 14px; height: 14px; border-radius: 50%; background: #f6ad55; cursor: pointer; }
   .status-text { font-size: 11px; color: #444; letter-spacing: 1px; text-transform: uppercase; min-width: 60px; text-align: right; }
   .playlist-label { font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #444; margin-bottom: 10px; padding-left: 4px; }
   .playlist-item { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 10px; transition: background 0.2s; }
@@ -52,47 +59,13 @@
   <div class="widget-header">
     <div class="live-dot"></div>
     <span class="live-text">Ao vivo</span>
-    <div class="station-name">Rádio Libertação</div>
+    <div class="station-name">Rádio Louvor &amp; Gratidão</div>
   </div>
-  <!-- Botão Locutor IA -->
-  <div id="locutor-btn" style="
-    display:flex;align-items:center;gap:8px;
-    background:#1a1a1a;border:1px solid #2a2a2a;
-    border-radius:10px;padding:10px 14px;
-    margin-bottom:16px;cursor:default;
-  ">
-    <div id="locutor-dot" style="
-      width:10px;height:10px;border-radius:50%;
-      background:#333;flex-shrink:0;
-      transition:background 0.4s;
-    "></div>
-    <span id="locutor-label" style="
-      font-size:12px;color:#555;
-      letter-spacing:1px;text-transform:uppercase;
-    ">Locutor IA</span>
-    <span id="locutor-uptime" style="
-      margin-left:auto;font-size:11px;color:#333;
-    "></span>
-  </div>
-  <!-- Botão Locutor IA -->
-  <div id="locutor-btn" style="
-    display:flex;align-items:center;gap:8px;
-    background:#1a1a1a;border:1px solid #2a2a2a;
-    border-radius:10px;padding:10px 14px;
-    margin-bottom:16px;cursor:default;
-  ">
-    <div id="locutor-dot" style="
-      width:10px;height:10px;border-radius:50%;
-      background:#333;flex-shrink:0;
-      transition:background 0.4s;
-    "></div>
-    <span id="locutor-label" style="
-      font-size:12px;color:#555;
-      letter-spacing:1px;text-transform:uppercase;
-    ">Locutor IA</span>
-    <span id="locutor-uptime" style="
-      margin-left:auto;font-size:11px;color:#333;
-    "></span>
+  <!-- Botão Locutor IA (único, sem duplicação) -->
+  <div class="locutor-row">
+    <div class="locutor-dot" id="locutor-dot"></div>
+    <span class="locutor-label" id="locutor-label">Locutor IA</span>
+    <span class="locutor-uptime" id="locutor-uptime"></span>
   </div>
   <div class="now-playing">
     <div class="now-label">Tocando agora</div>
@@ -100,7 +73,7 @@
       <div class="vinyl"></div>
       <div class="song-text">
         <div class="song-title" id="song-title">Aguardando...</div>
-        <div class="song-artist" id="song-artist">Rádio Gospel 24h</div>
+        <div class="song-artist" id="song-artist">Rádio Louvor 24h</div>
       </div>
     </div>
     <div class="wave-bar"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
@@ -160,7 +133,7 @@
   }
 
   function processTitle(raw) {
-    var title = raw; var artist = 'Rádio Libertação';
+    var title = raw; var artist = 'Rádio Louvor & Gratidão';
     if (raw.includes(' - ')) { var parts = raw.split(' - '); artist = parts[0].trim(); title = parts.slice(1).join(' - ').trim(); }
     history.unshift({ title: title, artist: artist });
     if (history.length > 6) history.pop();
@@ -195,46 +168,18 @@
           dot.style.background = '#2dc653';
           dot.style.boxShadow = '0 0 8px #2dc653';
           label.style.color = '#2dc653';
-          label.textContent = 'Locutor IA • Online';
+          label.textContent = 'Irmão Hermes • Online';
           uptime.textContent = data.uptime || '';
         } else {
           dot.style.background = '#e63946';
           dot.style.boxShadow = '0 0 8px #e63946';
           label.style.color = '#e63946';
-          label.textContent = 'Locutor IA • Offline';
+          label.textContent = 'Irmão Hermes • Offline';
           uptime.textContent = '';
         }
       })
       .catch(function() {
-        document.getElementById('locutor-label').textContent = 'Locutor IA • Verificando...';
-      });
-  }
-  checkLocutorStatus();
-  setInterval(checkLocutorStatus, 30000);
-
-  function checkLocutorStatus() {
-    fetch('http://156.67.31.108:3200/status.json?t=' + Date.now())
-      .then(function(r){ return r.json(); })
-      .then(function(data) {
-        var dot = document.getElementById('locutor-dot');
-        var label = document.getElementById('locutor-label');
-        var uptime = document.getElementById('locutor-uptime');
-        if (data.status === 'on') {
-          dot.style.background = '#2dc653';
-          dot.style.boxShadow = '0 0 8px #2dc653';
-          label.style.color = '#2dc653';
-          label.textContent = 'Locutor IA • Online';
-          uptime.textContent = data.uptime || '';
-        } else {
-          dot.style.background = '#e63946';
-          dot.style.boxShadow = '0 0 8px #e63946';
-          label.style.color = '#e63946';
-          label.textContent = 'Locutor IA • Offline';
-          uptime.textContent = '';
-        }
-      })
-      .catch(function() {
-        document.getElementById('locutor-label').textContent = 'Locutor IA • Verificando...';
+        document.getElementById('locutor-label').textContent = 'Irmão Hermes • Verificando...';
       });
   }
   checkLocutorStatus();

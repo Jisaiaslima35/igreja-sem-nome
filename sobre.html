@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre - Igreja Sem Nome</title>
+    <title>Sobre - Rádio Louvor e Gratidão</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
         <div class="container header-inner">
-            <a href="index.html" class="logo">Igreja Sem Nome</a>
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🎙️</span>
+                <span class="logo-text">Rádio Louvor<br><em>&amp; Gratidão</em></span>
+            </a>
             <nav class="nav" id="nav">
                 <ul class="nav-list">
                     <li><a href="index.html" class="nav-link">Início</a></li>
@@ -27,24 +31,40 @@
         </div>
     </header>
 
-    <section class="sobre" style="padding-top: 80px;">
-        <h2>Sobre Nós</h2>
-        <div class="content-section">
-            <p>Somos uma igreja dedicada a-spread a Palavra de Deus e acolhher todos que buscam espiritualidade e comunhão.</p>
-            <p>Nossos cultos são aos domingos às 18h. Venha nos visitar!</p>
+    <div class="banner">
+        <div class="container banner-inner">
+            <span class="banner-badge">ℹ️ SOBRE</span>
+            <p>Conheça a Rádio Louvor &amp; Gratidão — a rádio que toca sua alma.</p>
         </div>
-        <div class="horarios">
-            <div class="card">
-                <h3>Domingo</h3>
-                <p>Culto de Celebração - 18h</p>
+    </div>
+
+    <section class="sobre" style="padding-top: 80px;">
+        <div class="container">
+            <h2>Sobre Nós</h2>
+            <div class="content-section">
+                <p>A <strong>Rádio Louvor &amp; Gratidão</strong> nasceu com a missão de levar a Palavra de Deus e os melhores louvores gospel 24 horas por dia, com programação 100% gospel.</p>
+                <p>Contamos com o <strong>Irmão Hermes</strong>, nosso locutor virtual com voz clonada, pronto para orar, cantar, animar e abençoar cada ouvinte que chega. Também temos reuniões online toda semana, mural de oração e programação especial de eventos.</p>
+                <p>Venha fazer parte da nossa família! 🙏</p>
             </div>
-            <div class="card">
-                <h3>Terça</h3>
-                <p>Estudo Bíblico - 19h</p>
-            </div>
-            <div class="card">
-                <h3>Quinta</h3>
-                <p>Noite de Oração - 20h</p>
+
+            <h2 class="horarios-title">⏰ Programação Semanal</h2>
+            <div class="horarios">
+                <div class="card">
+                    <h3>Domingo</h3>
+                    <p>Culto de Celebração - 18h</p>
+                </div>
+                <div class="card">
+                    <h3>Segunda</h3>
+                    <p>Louvor &amp; Adoração - 20h</p>
+                </div>
+                <div class="card">
+                    <h3>Terça</h3>
+                    <p>Estudo Bíblico - 19h</p>
+                </div>
+                <div class="card">
+                    <h3>Quinta</h3>
+                    <p>Noite de Oração - 20h</p>
+                </div>
             </div>
         </div>
     </section>
@@ -55,7 +75,7 @@
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
-        <p>&copy; 2026 Igreja Sem Nome</p>
+        <p>&copy; 2026 Rádio Louvor &amp; Gratidão — A rádio que toca sua alma 🎙️🙏</p>
     </footer>
 
     <script src="js/app.js"></script>
@@ -77,9 +97,7 @@
         }
     })();
     </script>
-${TAWK}
-
-    <!-- Tawk.to Chat -->
+    <!-- Tawk.to Chat (suporte) -->
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){
@@ -91,27 +109,5 @@ ${TAWK}
     s0.parentNode.insertBefore(s1,s0);
     })();
     </script>
-    <!-- RADIO PLAYER FIXO -->
-    <div style="position:fixed;bottom:24px;left:24px;z-index:9999;">
-        <script type="text/javascript" src="https://hosted.muses.org/mrp.js"></script>
-        <script type="text/javascript">
-        MRP.insert({
-            "url":"https://stream.zeno.fm/2lakgfphuy7tv",
-            "lang":"pt",
-            "codec":"mp3",
-            "volume":92,
-            "autoplay":true,
-            "forceHTML5":true,
-            "jsevents":true,
-            "buffering":0,
-            "title":"Radio Igreja",
-            "welcome":"Bem Vindos",
-            "wmode":"transparent",
-            "skin":"scradio",
-            "width":160,
-            "height":100
-        });
-        </script>
-    </div>
 </body>
 </html>
