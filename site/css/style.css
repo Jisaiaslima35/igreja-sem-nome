@@ -175,9 +175,24 @@ code { background: #fef3e2; color: #c53030; padding: 2px 6px; border-radius: 4px
   .btn-send { width: 36px; height: 36px; font-size: 1.1rem; }
   #chat-input { padding: 9px 14px; font-size: 0.9rem; }
 
-  /* PLAYER MUSES: menor no mobile e canto */
-  #muses-player-container { bottom: 10px !important; left: 10px !important; }
-  #muses-player-container iframe, #muses-player-container object, #muses-player-container embed { transform: scale(0.75); transform-origin: bottom left; }
+/* ============ PLAYER MUSES (canto superior esquerdo) ============ */
+#muses-player-container {
+    position: fixed;
+    top: 90px;
+    left: 15px;
+    z-index: 9990;
+    background: rgba(255,255,255,0.95);
+    border-radius: 12px;
+    padding: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.chat-input-wrap { z-index: 100; position: relative; }
+
+@media (max-width: 768px) {
+  /* PLAYER MUSES: ainda menor no mobile, canto superior esquerdo */
+  #muses-player-container { top: 70px !important; left: 8px !important; padding: 2px; }
+  #muses-player-container iframe, #muses-player-container object, #muses-player-container embed { transform: scale(0.65); transform-origin: top left; }
+}
 
   /* MURAL DE ORAÇÃO: padding menor */
   .prayer-section { padding: 18px; }
