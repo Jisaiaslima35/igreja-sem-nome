@@ -51,11 +51,7 @@
     <div class="container main-grid">
 
         <aside class="col-left">
-            <div class="widget">
-                <h3>🎵 Ouça Agora</h3>
-                <iframe src="radio-player.html" width="100%" height="520" frameborder="0" scrolling="no" style="border-radius:16px;border:none;"></iframe>
-            </div>
-            <div class="widget">
+            <div class="widget widget-highlight">
                 <h3>🏆 Top 10 Louvores</h3>
                 <p class="widget-sub">Clique pra pedir no chat</p>
                 <ol class="top10-list" id="top10">
@@ -149,6 +145,29 @@
         </div>
         <p>&copy; 2026 Rádio Louvor &amp; Gratidão — A rádio que toca sua alma 🎙️🙏</p>
     </footer>
+
+    <!-- PLAYER MUSES FLUTUANTE FIXO (igual Mega Crystal / terceiro) -->
+    <div id="muses-player-container" style="position:fixed;bottom:20px;left:20px;z-index:9998;">
+        <script type="text/javascript" src="https://hosted.muses.org/mrp.js"></script>
+        <script type="text/javascript">
+        MRP.insert({
+        'url':'https://stream.zeno.fm/2lakgfphuy7tv',
+        'lang':'pt',
+        'codec':'mp3',
+        'volume':80,
+        'autoplay':false,
+        'forceHTML5':true,
+        'jsevents':true,
+        'buffering':0,
+        'title':'Rádio Louvor & Gratidão',
+        'welcome':'Tocando agora',
+        'wmode':'transparent',
+        'skin':'scradio',
+        'width':200,
+        'height':120
+        });
+        </script>
+    </div>
 
     <script src="js/app.js"></script>
     <script src="js/chat.js"></script>
