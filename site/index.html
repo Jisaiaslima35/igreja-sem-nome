@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rádio Louvor e Gratidão - A rádio que toca sua alma</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🎙️</span>
+                <span class="logo-text">Rádio Louvor<br><em>&amp; Gratidão</em></span>
+            </a>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">Início</a></li>
+                    <li><a href="#chat-ao-vivo" class="nav-link">Chat</a></li>
+                    <li><a href="#mural-oracoes" class="nav-link">Oração</a></li>
+                    <li><a href="#top10" class="nav-link">Top 10</a></li>
+                </ul>
+            </nav>
+            <div class="online-badge" id="online-badge">
+                <span class="online-dot"></span>
+                <span id="online-count">0</span> online
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="banner">
+        <div class="container banner-inner">
+            <span class="banner-badge">📡 AO VIVO 24H</span>
+            <p>Cultos, louvores e oração. A rádio que toca sua alma. 🙏✨</p>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="container hero-inner">
+            <h1>Bem-vindo à Rádio Louvor &amp; Gratidão</h1>
+            <p>Programação gospel 24 horas, com o Irmão Hermes, nosso locutor virtual, e os melhores louvores do Brasil.</p>
+        </div>
+    </section>
+
+    <div class="container main-grid">
+
+        <aside class="col-left">
+            <div class="widget">
+                <h3>🎵 Ouça Agora</h3>
+                <iframe src="radio-player.html" width="100%" height="520" frameborder="0" scrolling="no" style="border-radius:16px;border:none;"></iframe>
+            </div>
+            <div class="widget">
+                <h3>🏆 Top 10 Louvores</h3>
+                <p class="widget-sub">Clique pra pedir no chat</p>
+                <ol class="top10-list" id="top10">
+                    <li><span class="rank">1</span><div class="song"><strong>É Ele</strong><small>Drops INA</small></div><button class="ask-btn" data-song="É Ele - Drops INA">Pedir</button></li>
+                    <li><span class="rank">2</span><div class="song"><strong>Eu Te Levantarei</strong><small>Padre Marcelo Rossi</small></div><button class="ask-btn" data-song="Eu Te Levantarei - Padre Marcelo Rossi">Pedir</button></li>
+                    <li><span class="rank">3</span><div class="song"><strong>Reacende a Chama</strong><small>Sued Silva</small></div><button class="ask-btn" data-song="Reacende a Chama - Sued Silva">Pedir</button></li>
+                    <li><span class="rank">4</span><div class="song"><strong>Cordeiro e Leão</strong><small>Jefferson &amp; Suellen</small></div><button class="ask-btn" data-song="Cordeiro e Leão - Jefferson e Suellen">Pedir</button></li>
+                    <li><span class="rank">5</span><div class="song"><strong>Deus Está Aqui (Medley)</strong><small>Gabriela Rocha</small></div><button class="ask-btn" data-song="Deus Está Aqui - Gabriela Rocha">Pedir</button></li>
+                    <li><span class="rank">6</span><div class="song"><strong>Escape</strong><small>Renascer Praise</small></div><button class="ask-btn" data-song="Escape - Renascer Praise">Pedir</button></li>
+                    <li><span class="rank">7</span><div class="song"><strong>Como Flecha</strong><small>Samuel Dias</small></div><button class="ask-btn" data-song="Como Flecha - Samuel Dias">Pedir</button></li>
+                    <li><span class="rank">8</span><div class="song"><strong>Toda Terra</strong><small>Gabriela Rocha</small></div><button class="ask-btn" data-song="Toda Terra - Gabriela Rocha">Pedir</button></li>
+                    <li><span class="rank">9</span><div class="song"><strong>Ovelhinha</strong><small>Isadora Pompeo</small></div><button class="ask-btn" data-song="Ovelhinha - Isadora Pompeo">Pedir</button></li>
+                    <li><span class="rank">10</span><div class="song"><strong>Dono da Promessa</strong><small>Kellen Byanca</small></div><button class="ask-btn" data-song="Dono da Promessa - Kellen Byanca">Pedir</button></li>
+                </ol>
+            </div>
+        </aside>
+
+        <main class="col-center">
+
+            <!-- CHAT (ESTILO MEGA CRYSTAL) -->
+            <section id="chat-ao-vivo" class="chat-section">
+                <div class="chat-header">
+                    <div class="chat-header-left">
+                        <span class="chat-live-dot"></span>
+                        <span class="chat-live-text">AO VIVO</span>
+                    </div>
+                    <h2>💬 Bate-Papo com o Irmão Hermes</h2>
+                    <p>Converse, peça oração, música e versículo!</p>
+                </div>
+                <div class="chat-messages" id="chat-messages">
+                    <!-- Mensagens entram aqui -->
+                </div>
+                <div class="chat-input-wrap">
+                    <button class="btn-mic" id="btn-mic" aria-label="Gravar áudio" title="Gravar áudio">
+                        <svg id="mic-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="2" width="6" height="12" rx="3"/>
+                            <path d="M5 10a7 7 0 0 0 14 0"/>
+                            <line x1="12" y1="19" x2="12" y2="22"/>
+                        </svg>
+                        <svg id="mic-stop" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="display:none">
+                            <rect x="6" y="6" width="12" height="12" rx="2"/>
+                        </svg>
+                    </button>
+                    <input type="text" id="chat-input" placeholder="Escreva uma mensagem..." maxlength="500" autocomplete="off">
+                    <button class="btn-send" id="btn-send" aria-label="Enviar">➤</button>
+                </div>
+                <div class="mic-status" id="mic-status" style="display:none"></div>
+            </section>
+
+            <!-- MURAL DE ORAÇÃO -->
+            <section id="mural-oracoes" class="prayer-section">
+                <h2>🙏 Mural de Oração</h2>
+                <p class="section-sub">Deixe seu pedido. A comunidade ora junto com você.</p>
+                <form id="oracao-form" class="oracao-form">
+                    <input type="text" id="oracao-nome" placeholder="Seu nome" required maxlength="32">
+                    <textarea id="oracao-pedido" placeholder="Seu pedido de oração" required maxlength="500"></textarea>
+                    <button type="submit" class="btn">🙏 Enviar Pedido</button>
+                </form>
+                <div class="oracao-cards" id="oracao-cards"></div>
+            </section>
+
+        </main>
+
+        <aside class="col-right">
+            <div class="widget">
+                <h3>📻 Status da Rádio</h3>
+                <div class="status-row"><span class="status-dot online"></span> Stream: <strong>Online</strong></div>
+                <div class="status-row"><span class="status-dot online" id="hermes-dot"></span> Irmão Hermes: <strong id="hermes-status">Online</strong></div>
+                <div class="status-row"><span class="status-dot online"></span> Mural: <strong>Ativo</strong></div>
+                <p class="widget-sub" style="margin-top:12px">Programação gospel 24h</p>
+            </div>
+            <div class="widget widget-highlight">
+                <h3>✨ Comandos do Chat</h3>
+                <ul class="commands-list">
+                    <li><code>oi</code> — saudação</li>
+                    <li><code>toca [música]</code> — pedir louvor</li>
+                    <li><code>oração</code> — pedir oração</li>
+                    <li><code>versículo</code> — versículo do dia</li>
+                    <li><code>quem é você</code> — sobre o Hermes</li>
+                </ul>
+            </div>
+        </aside>
+
+    </div>
+
+    <footer class="footer">
+        <div class="social">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2026 Rádio Louvor &amp; Gratidão — A rádio que toca sua alma 🎙️🙏</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/audio-recorder.js"></script>
+    <script>
+    (function() {
+        var hamburger = document.getElementById('hamburger');
+        var nav = document.getElementById('nav');
+        if (hamburger && nav) {
+            hamburger.addEventListener('click', function() {
+                nav.classList.toggle('open');
+                hamburger.classList.toggle('open');
+            });
+            document.addEventListener('click', function(e) {
+                if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+                    nav.classList.remove('open');
+                    hamburger.classList.remove('open');
+                }
+            });
+        }
+    })();
+    </script>
+</body>
+</html>

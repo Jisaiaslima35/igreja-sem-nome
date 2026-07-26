@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "titulo": "Culto de Celebração",
+    "data": "2026-07-26",
+    "resumo": "Nosso culto de domingo começa às 18h. Traga sua família e venha louvar a Deus!",
+    "texto": "Culto aberto a todos.",
+    "imagem": "https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=800",
+    "categoria": "Culto"
+  },
+  {
+    "id": 2,
+    "titulo": "Estudo Bíblico",
+    "data": "2026-07-29",
+    "resumo": "Terça-feira às 19h. Estudo profundo da Palavra.",
+    "texto": "Estudo aberto.",
+    "imagem": "https://images.unsplash.com/photo-1504052433629-a6ef81a54d30?w=800",
+    "categoria": "Estudo"
+  },
+  {
+    "id": 3,
+    "titulo": "Noite de Oração",
+    "data": "2026-07-30",
+    "resumo": "Quinta às 20h. Momento especial de intercessão.",
+    "texto": "Oração coletiva.",
+    "imagem": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800",
+    "categoria": "Oração"
+  }
+]
